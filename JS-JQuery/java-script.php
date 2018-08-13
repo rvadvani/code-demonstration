@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Demo for Java Script</title>
+	<title>Code Demo for Java Script & JQuery</title>
 </head>
 <body>
 
