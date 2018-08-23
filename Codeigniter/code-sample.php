@@ -13,6 +13,9 @@ $this->db->select('users.usrID, users_profiles.usrpID')
 // Delete Query
 $this->db->where('id', $id)->delete('users');
 
+// Last Inserted ID
+$insert_id = $this->db->insert_id();
+
 // dual database
 //database1 configuration 
 // application/config/database.php
