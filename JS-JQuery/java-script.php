@@ -4,7 +4,7 @@
 	<title>Code Demo for Java Script & JQuery</title>
 </head>
 <body>
-
+<input type="text" onkeydown="javascript: if(event.keyCode == 13) { post_comment(118) }" >
 
 <script>
 	// check box true or false in JS
