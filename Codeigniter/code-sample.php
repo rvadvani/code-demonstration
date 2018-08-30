@@ -74,6 +74,11 @@ $q = $database2->get();
 
 
 // file upload
+$config['upload_path'] 	= './images/website/';
+$config['allowed_types']   = 'gif|jpg|png';
+$config['encrypt_name']    = TRUE;
+$this->load->library('upload', $config);
+
 if(isset($_FILES['picture']['name']) && !empty($_FILES['picture']['name']))
 {
    if ( ! $this->upload->do_upload('picture'))
