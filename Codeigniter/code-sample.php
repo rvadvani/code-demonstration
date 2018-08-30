@@ -72,3 +72,17 @@ $database2->select('*');
 $database2->from('users');
 $q = $database2->get();
 
+
+// file upload
+if(isset($_FILES['picture']['name']) && !empty($_FILES['picture']['name']))
+{
+   if ( ! $this->upload->do_upload('picture'))
+   {
+       $error = array('error' => $this->upload->display_errors());
+       print_r($error); die();
+   }
+   else
+   {
+       $picture = $this->upload->data('file_name');
+   }
+}
