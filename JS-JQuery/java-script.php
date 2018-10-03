@@ -44,6 +44,13 @@
 	    });
 	});
 	
+	// scroll to top
+	$("#top").click(function() {
+	    $('html, body').animate({
+		scrollTop: $("#page-top").offset().top
+	    }, 1000);
+	});
+	
 </script>
 </body>
 </html>
