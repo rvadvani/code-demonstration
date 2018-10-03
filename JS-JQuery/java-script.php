@@ -30,6 +30,20 @@
 	$( window ).on( "load", function() {
 		console.log( "window loaded" );
 	});
+	
+	// display scroll after 300px to down
+	$(function () {
+	    $(window).scroll(function () {
+		if ($(this).scrollTop() > 300) {
+		    //alert('show');
+		    $('#top').fadeIn();
+		} else {
+			//alert('hide');
+		    $('#top').fadeOut();
+		}
+	    });
+	});
+	
 </script>
 </body>
 </html>
