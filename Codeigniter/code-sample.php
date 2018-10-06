@@ -91,3 +91,18 @@ if(isset($_FILES['picture']['name']) && !empty($_FILES['picture']['name']))
        $picture = $this->upload->data('file_name');
    }
 }
+
+public function export_orders() {
+         $array = $this->orders->get_orders_array();
+        $filename = "orders_data.xls";
+        $delimiter=";";
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment; filename="'.$filename.'";');
+        // open the "output" stream
+        // see http://www.php.net/manual/en/wrappers.php.php#refsect2-wrappers.php-unknown-unknown-unknown-descriptioq
+        $f = fopen('php://output', 'w');
+
+        foreach ($array as $line) {
+            fputcsv($f, $line, $delimiter);
+        }
+}
