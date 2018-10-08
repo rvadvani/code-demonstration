@@ -24,8 +24,7 @@
 	<div class="map_canvas" id="map_canvas"></div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&libraries=places&callback=initMap"
-    async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&libraries=places&callback=initMap" async defer></script>
 
     <script type="text/javascript">
 	  	function initMap() {
