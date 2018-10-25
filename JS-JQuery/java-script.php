@@ -25,6 +25,9 @@
 	$( document ).ready(function() {
 		console.log( "document loaded" );
 	});
+	
+	//select box option text not value
+	var countryName = $('#country').find(":selected").text();
 
 	// onload function
 	$( window ).on( "load", function() {
