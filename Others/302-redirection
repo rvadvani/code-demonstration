@@ -1,0 +1,17 @@
+
+
+// in .htaccess for codeigniter
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+Options All -Indexes
+
+RewriteCond %{HTTP_HOST} ^(www\.)?(rawand.com.sa)$
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://www.rawand.com.sa/$1 [R=302,L]
+
+ErrorDocument 403 /error.php
+ErrorDocument 404 /error.php
+ErrorDocument 500 /error.php	
