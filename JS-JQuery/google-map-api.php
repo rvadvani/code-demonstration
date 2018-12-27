@@ -93,5 +93,63 @@
 	            
 		}
     </script>
+   <!-- Drag & Drop coded by efood -->
+   <script type="text/javascript">
+      function initialize() {
+         var latt = document.getElementById("latt").value;
+         var longi = document.getElementById("longi").value;
+          var myLatlng = new google.maps.LatLng(latt, longi);
+          var myOptions = {
+            zoom: 13,
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          }
+
+          var map = new google.maps.Map(document.getElementById("map_wrapp"), myOptions); 
+
+          addMarker(myLatlng, 'Default Marker', map);
+
+          map.addListener('click',function(event) {
+              addMarker(event.latLng, 'Click Generated Marker', map);
+          });
+      }
+
+      function handleEvent(event) {
+         var geocoder = new google.maps.Geocoder();
+         geocoder.geocode({
+                   'latLng': event.latLng
+               }, function (results, status) {
+                   if (status ==
+                       google.maps.GeocoderStatus.OK) {
+                       if (results[0]) {
+                           $("#geocomplete").val(results[0].formatted_address);
+                       } else {
+                           console.log('No results found');
+                       }
+                   } else {
+                       console.log('Geocoder failed due to: ' + status);
+                   }
+               });
+          document.getElementById('latt').value = event.latLng.lat();
+          document.getElementById('longi').value = event.latLng.lng();
+          $("#geocomplete").trigger("geocode");
+      }
+
+      function addMarker(latlng,title,map) {
+          var marker = new google.maps.Marker({
+                  position: latlng,
+                  map: map,
+                  title: title,
+                  draggable:true
+          });
+
+          marker.addListener('drag', handleEvent);
+          marker.addListener('dragend', handleEvent);
+      }
+      $(window).on('load', function(){
+         initialize();
+      });
+   </script>
+   <!-- Coded by efood -->
 </body>
 </html>
