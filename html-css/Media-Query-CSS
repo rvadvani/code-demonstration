@@ -1,0 +1,28 @@
+
+/***** Desktop Screen: 1281px *****/
+@media (min-width: 1281px) {
+  //your css will be here
+}
+
+
+/***** Laptops Screen: 1025px to 1280px *****/
+@media (min-width: 1025px) and (max-width: 1280px) {
+  //your css will be here
+}
+
+
+/***** Tab Screen: 768px to 1024px *****/
+@media (min-width: 768px) and (max-width: 1024px) {
+  //your css will be here
+}
+
+
+/***** Phone Screen: 481px to 767px *****/
+@media (min-width: 481px) and (max-width: 767px) {
+  //your css will be here
+}
+
+/***** Small Screen: 320px to 479px *****/
+@media (min-width: 320px) and (max-width: 480px) {
+  //your css will be here
+}
