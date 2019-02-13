@@ -1,0 +1,11 @@
+// list out all artisan commands
+php artisan list
+
+// command to create auth functionalities
+php artisan make:auth
+
+// command to run migration files
+php artisan make:migrate
+
+// command to create Controller
+php artisan make:controller HomeController
